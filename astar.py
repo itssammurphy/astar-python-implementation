@@ -240,6 +240,12 @@ def main(window, width):
                         for spot in row:
                             spot.updateNeighbours(grid)
                     algorithm(lambda: draw(window, grid, ROWS, width), grid, start, end)
+                if event.key == pygame.K_r and not started:
+                    for row in grid:
+                        for spot in row:
+                            spot.reset()
+                    start = None
+                    end = None
 
     pygame.quit()
 
